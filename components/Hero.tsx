@@ -131,10 +131,10 @@ export default function Hero() {
         {/* 5. Texto + CTA em baixo à esquerda */}
         <div className="absolute bottom-0 left-0 z-20 max-w-sm p-6 sm:p-10">
           <h2 className="font-serif text-3xl leading-tight sm:text-4xl">
-            Desenhamos espaços. <br /> Elevamos vidas.
+            Acomodamos-te. <br /> Sempre no melhor conforto.
           </h2>
           <p className="mt-3 text-sm text-white/70">
-            Arquitetura que inspira. Interiores que refletem quem és.
+            Imóveis que refletem o nosso interior
           </p>
 
           <Link
