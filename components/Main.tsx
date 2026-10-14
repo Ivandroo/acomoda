@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { CircleUser, ShieldCheck, Award, ArrowRight, Star, Sofa, Wifi, Maximize2, Sparkles, Palette } from 'lucide-react'
 import Image from 'next/image'
+import { lugares } from '@/data'
 
 const proposito = [
     {
@@ -98,16 +99,63 @@ export default function Main() {
             <div className='flex flex-col gap-4 p-6 sm:p-10 '>
                 <div className='w-full h-0.5 border-t border-cinza-ink'></div>
                 <span className='text-destaque text-xs'>Valores</span>
-                <h1 className='font-serif text-3xl leading-tight sm:text-4xl max-w-xl'>O que os nossos imoveis podem entregar.</h1>
+                <h1 className='font-serif text-3xl leading-tight sm:text-4xl max-w-xl'>O que os nossos imoveis podem entregar</h1>
                 <div>
                     <div className='flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-6'>
                         {valores.map((item, index) => (
-                            <div key={index} className='flex flex-col gap-1 sm:gap-1 p-4 rounded-2xl  border-white/15 bg-white/5 text-white backdrop-blur-md'>
+                            <div key={index} className='flex flex-col gap-1 sm:gap-1 p-4 rounded-2xl border border-white/15 bg-white/5 text-white backdrop-blur-md'>
                                 <span className='text-destaque'>{item.icone}</span>
                                 <h2 className='font-serif text-base '>{item.nome}</h2>
                                 <p className='text-cinza font-serif text-xs'>{item.desc}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Lista de lugares mais procurados */}
+            <div className='flex flex-col gap-4 p-6 sm:p-10 '>
+                <div className='w-full h-0.5 border-t border-cinza-ink'></div>
+                <span className='text-destaque text-xs'>Lugares</span>
+                <h1 className='font-serif text-3xl leading-tight sm:text-4xl max-w-xl'>Lugares mais procurados para se hospedar </h1>
+                <div className='flex flex-col w-full gap-4 sm:grid sm:grid-cols-2 md:grid-cols-4'>
+                    {lugares.slice(0, 4).map((lugar) => (
+                        <div key={lugar.id} className='flex flex-col gap-1 sm:gap-1 p-1 pb-2 rounded-2xl border border-white/5 text-branco'>
+                            <Image
+                                src="/house.jpg"
+                                alt="Imagem representativa"
+                                width={500}
+                                height={300}
+                                className="h-auto w-full rounded-xl"
+                            />
+                            <h2 className='font-serif text-branco text-xl font-medium px-1'>{lugar.nome}</h2>
+                            <p className='text-cinza text-xs px-1'>{lugar.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Secção dos comentários */}
+            <div className='w-full flex flex-col gap-4 p-6 sm:p-10 sm:flex-row border border-white/15 bg-white/5 text-white backdrop-blur-md rounded-4xl'>
+                <div className='flex flex-col gap-4 min-w-3xs'>
+                    <span className='text-destaque text-xs'>Comentários</span>
+                    <h1 className='font-serif text-3xl leading-tight sm:text-4xl max-w-xl'>Veja o que nossos clientes dizem de nós </h1>
+                </div>
+                <div>
+                    <div className='flex flex-col gap-4 sm:gap-6 p-4 rounded-2xl border border-white/15 bg-white/10 text-white backdrop-blur-md sm:grid sm:grid-cols-2'>
+                        <div className='flex flex-col gap-2 sm:gap-4'>
+                            <p className='font-serif text-cinza'>"Gostei muito de usar o app, é deveras incrivel. A experiencia que tive num dos apartamentos que aluguei foi muito interessante, bom atendimento, super organizado. Recomendo, não vão se arrepender!!"</p>
+                            <p className='flex'><span className='flex text-destaque'><Star size={16}/><Star size={16}/><Star size={16}/><Star size={16}/></span><Star size={16}/></p>
+                        </div>
+                        <div className='flex gap-2 items-end justify-end'>
+                            <div>
+                                <h2 className='font-serif text-xl font-medium'>John Doe</h2>
+                                <span className='text-cinza text-xs'>22/10/2026</span>
+                            </div>
+                            <div className='flex items-center justify-center w-52 h-52'>
+                                <Image src="/modelo.jpg" alt='imagem perfil' width={200} height={100} className='rounded-xl w-full h-full'/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
