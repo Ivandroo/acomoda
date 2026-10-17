@@ -138,10 +138,10 @@ export default function Hero() {
           </p>
 
           <Link
-            href="#projetos"
+            href="/imoveis"
             className="mt-6 inline-flex items-center gap-3 rounded-full bg-white py-2 pl-6 pr-2 text-sm font-medium text-black"
           >
-            Ver imóveis
+            Ver acomodações
             <span className="grid h-9 w-9 place-items-center rounded-full bg-black text-white">
               →
             </span>

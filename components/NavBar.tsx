@@ -67,7 +67,7 @@ export default function NavBar() {
   }, [isOpen]);
   return (
     <header className="fixed top-0 right-0 z-30 flex items-center justify-between px-3 py-2 sm:px-2 w-full">
-      <div className="w-full px-2 py-2 flex items-center justify-between bg-fundo/5 backdrop-blur-2xl rounded-4xl">
+      <div className="w-full px-6 py-2 flex items-center justify-between bg-fundo/5 backdrop-blur-2xl rounded-4xl sm:px-10 sm:py-3">
         <span className="text-white font-serif text-lg tracking-wide">
           Acomoda
         </span>
@@ -109,7 +109,7 @@ export default function NavBar() {
           href="/contactos"
           className="hidden rounded-full bg-white px-4 py-2 text-sm font-medium text-black sm:inline-flex"
         >
-          Consulta
+          Conectar-me
         </Link>
         <button
           type="button"
