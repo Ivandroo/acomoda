@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Início", href: "/" },
@@ -11,6 +12,9 @@ const links = [
 ];
 
 export default function NavBar() {
+
+  const pathname = usePathname()
+
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -76,19 +80,18 @@ export default function NavBar() {
           aria-label="Navegação principal"
           className="hidden items-center gap-6 text-sm text-white/80 md:flex"
         >
-          {links.map((link, i) => (
+          {links.map((link, i) => {
+
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
+            return (
             <Link
               key={link.href}
               href={link.href}
-              className={
-                i === 0
-                  ? "rounded-full bg-white px-4 py-1.5 font-medium text-black"
-                  : "transition hover:text-white"
-              }
+              className={`transition rounded-full px-4 py-1.5 font-medium ${isActive ? "bg-branco text-fundo" : "text-branco hover:text-destaque"}`}
             >
               {link.label}
             </Link>
-          ))}
+          )})}
         </nav>
 
         <button
@@ -166,3 +169,5 @@ export default function NavBar() {
     </header>
   );
 }
+
+// i === 0 ? "rounded-full bg-white px-4 py-1.5 font-medium text-black" :

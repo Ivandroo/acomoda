@@ -68,7 +68,7 @@ export default function Hero() {
   return (
     // Moldura exterior: borda arredondada com margem à volta
     <section className="p-1 sm:p-2">
-      <div className="relative min-h-[88vh] overflow-hidden rounded-[2rem] bg-neutral-900 text-white">
+      <div className="relative min-h-[88vh] overflow-hidden rounded-4xl bg-neutral-900 text-white">
         {/* 1. Imagem de fundo (coloca em /public/hero.jpg) */}
         <Image
           src="/hero.jpg"
