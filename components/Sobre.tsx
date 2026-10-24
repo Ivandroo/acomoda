@@ -155,7 +155,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="p-1 sm:p-2 rounded-4xl border border-white/15 bg-fundo/25 text-white backdrop-blur-md">
+      <section className="p-1 sm:p-2 rounded-4xl border border-white/15 bg-white text-fundo backdrop-blur-md">
         <div className="flex flex-col items-center gap-6 md:grid md:grid-cols-2 sm:gap-12 p-6 sm:p-10 ">
           <div className="flex flex-col gap-4 ">
             <span className="bg-destaque p-1 px-2 w-fit rounded-2xl text-fundo text-xs uppercase font-medium">

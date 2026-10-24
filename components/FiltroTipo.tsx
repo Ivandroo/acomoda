@@ -34,7 +34,7 @@ const opcoes: {label: string, value: Tipo, icon: React.ReactNode}[] = [
 
 export default function FiltroTipo({ ativo, onChange }: { ativo: Tipo, onChange: (t: Tipo) => void}) {
   return (
-    <div className='flex items-center gap-4 bg-fundo/25 text-white py-2 px-4 rounded-2xl placeholder:text-cinza-ink border border-white/15 focus:outline-none focus:ring-2 focus:ring-destaque'>
+    <div className='flex items-center gap-4 bg-branco text-cinza-ink py-2 px-4 rounded-2xl placeholder:text-cinza-ink border border-white/15 focus:outline-none focus:ring-2 focus:ring-destaque'>
         <div className='hidden md:flex gap-2'>
             {opcoes.map(op => (
                 <button key={op.value} onClick={() => onChange(op.value)} className={ativo === op.value ? "flex items-center bg-destaque rounded-lg py-1 px-2 text-white" : "flex items-center bg-cinza rounded-lg text-gray-700 py-1 px-2 "}>
