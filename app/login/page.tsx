@@ -1,5 +1,4 @@
 import PageTitle from '@/components/PageTitle'
-import { login, signup } from './actions'
 
 const errorMessages: Record<string, string> = {
   'invalid-input': 'Informe um email e uma senha.',
@@ -30,6 +29,16 @@ const statusMessages: Record<string, string> = {
 
 type LoginPageProps = {
   searchParams: Promise<{ error?: string; message?: string }>
+}
+
+async function Login () {
+  'use server'
+  alert('Esse modal não se encontra ativo')
+}
+
+async function Signup () {
+  'use server'
+  alert('Esse modal não se encontra ativo')
 }
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
@@ -107,14 +116,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </fieldset>
               <button
                 type="submit"
-                formAction={login}
+                formAction={Login}
                 className="w-full rounded-2xl bg-blue-500 px-4 py-2 font-medium text-white transition-colors duration-300 hover:bg-blue-500/90"
               >
                 Entrar
               </button>
               <button
                 type="submit"
-                formAction={signup}
+                formAction={Signup}
                 className="w-full rounded-2xl px-4 py-2 font-medium text-white"
               >
                 Criar conta
